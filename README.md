@@ -1,64 +1,67 @@
-# 🤖 Análise de Sentimento - App Streamlit
+# Tech Challenger 3
 
-Aplicativo simples para análise de sentimento usando o modelo treinado com PySentimiento.
+Um aplicativo web simples construído com Streamlit para classificar se o preço de um produto está dentro ou fora do padrão de mercado, utilizando um modelo de machine learning pré-treinado.
+
+<img width="2541" height="1427" alt="image" src="https://github.com/user-attachments/assets/be45b73c-2d1d-4c9d-8b6e-c77a6d180b4b" />
+
+
+## 🎯 Sobre o Projeto
+
+Este projeto fornece uma interface amigável para interagir com um modelo de regressão logística. O objetivo é permitir que um usuário insira duas informações-chave de um produto — seu preço e sua relação com o preço médio da categoria — e receba uma classificação instantânea sobre a normalidade desse valor.
+
+## ✨ Funcionalidades
+
+-   **Interface Intuitiva:** Campos de entrada claros para o usuário.
+-   **Classificação em Tempo Real:** Pressione o botão "Classificar" para obter um resultado instantâneo.
+-   **Exibição de Confiança:** Além da classe ("Preço Normal" ou "Fora do Padrão"), o app exibe a confiança percentual do modelo na previsão.
+
+## 🛠️ Tecnologias Utilizadas
+
+-   **Python**
+-   **Streamlit** - Para a criação da interface web.
+-   **Scikit-learn** - Para carregar e utilizar o modelo de machine learning.
+-   **Numpy** - Para a manipulação de dados de entrada.
 
 ## 🚀 Como Executar
 
-1. **Instalar dependências:**
+Siga os passos abaixo para rodar o projeto localmente.
 
-```bash
-pip install -r requirements.txt
-```
+### Pré-requisitos
 
-2. **Baixar recursos do NLTK (necessário na primeira execução):**
+-   Python 3.8 ou superior
+-   `pip` (gerenciador de pacotes do Python)
+-   O arquivo do modelo `logistic_regression_model.pkl` deve estar na mesma pasta que o script principal.
 
-```bash
-python -c "import nltk; nltk.download('stopwords')"
-```
+### Instalação e Execução
 
-3. **Testar se tudo está funcionando (opcional):**
+1.  **Clone o repositório:**
+    ```bash
+    git clone <url-do-seu-repositorio>
+    cd <nome-do-seu-repositorio>
+    ```
 
-```bash
-python test_app.py
-```
+2.  **Crie um ambiente virtual (recomendado):**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # No Windows, use: venv\Scripts\activate
+    ```
 
-4. **Executar o aplicativo:**
+3.  **Instale as dependências:**
+    Crie um arquivo `requirements.txt` com o seguinte conteúdo:
+    ```txt
+    streamlit
+    numpy
+    scikit-learn
+    ```
+    E então instale-as:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-```bash
-streamlit run app.py
-```
+4.  **Rode o aplicativo Streamlit:**
+    (Supondo que seu arquivo Python se chame `app.py`)
+    ```bash
+    streamlit run app.py
+    ```
 
-## 📋 Funcionalidades
-
-- **Análise Individual**: Digite um texto e veja o sentimento
-- **Análise em Lote**: Upload de arquivo CSV para análise múltipla
-- **Processamento de Texto**: Limpeza automática e remoção de stop words
-- **Download**: Baixe os resultados em CSV
-
-## 📁 Arquivos Necessários
-
-- `app.py` - Aplicativo principal
-- `sentiment_pipeline.pkl` - Modelo treinado (opcional)
-- `requirements.txt` - Dependências
-- `test_app.py` - Script de teste
-
-## 💡 Como Usar
-
-1. Abra o aplicativo no navegador
-2. Digite um texto ou faça upload de um CSV
-3. Clique em "Analisar Sentimento"
-4. Veja os resultados e faça download se necessário
-
-## 🔧 Tecnologias Utilizadas
-
-- **Streamlit**: Interface web
-- **PySentimiento**: Modelo de análise de sentimento
-- **NLTK**: Processamento de linguagem natural
-- **Pandas**: Manipulação de dados
-
-## ⚠️ Notas Importantes
-
-- O aplicativo funciona mesmo sem o arquivo `sentiment_pipeline.pkl`
-- Na primeira execução, o modelo será baixado automaticamente
-- Para análise em lote, use colunas com nomes contendo 'text' ou 'comentario'
-- O script `test_app.py` pode ser usado para verificar se tudo está funcionando
+Pronto! O aplicativo abrirá automaticamente no seu navegador.
